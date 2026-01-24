@@ -1,0 +1,274 @@
+/* ========================================================== */
+/* WHO?CARIES - MASTER PREMIUM CSS                            */
+/* ========================================================== */
+
+/* 1. TEMEL AYARLAR VE DEĞİŞKENLER */
+:root {
+    /* KAPAKTAKİ RENKLER */
+    --ana-renk: #011E41;      /* Derin Lacivert (Kurumsal) */
+    --vurgu-renk: #b72a2a;    /* Kapaktaki Magenta/Pembe Tonu */
+    
+    --metin-renk: #334155;    /* Göz yormayan gri */
+    --baslik-renk: #0F172A;   /* Siyah kadar koyu lacivert */
+    
+    --sayfa-bg: #F8FAFC;      /* Kağıt beyazı zemin */
+    --kart-bg: #FFFFFF;       /* Bembeyaz kartlar */
+    
+    /* FONTLAR */
+    --font-serif: 'Playfair Display', serif; /* Başlıklar için */
+    --font-sans: 'Manrope', sans-serif;      /* Metinler için */
+    
+    /* GÖLGELER (Derinlik hissi) */
+    --golge: 0 10px 30px -5px rgba(0, 0, 0, 0.06);
+    --golge-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-sans);
+    color: var(--metin-renk);
+    background-color: var(--sayfa-bg);
+    line-height: 1.7;
+    /* ÖNEMLİ DÜZELTME: Header sabit olduğu için içeriği aşağı itiyoruz */
+    padding-top: 110px; 
+    -webkit-font-smoothing: antialiased;
+}
+
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+a { text-decoration: none; transition: all 0.3s ease; }
+
+/* 2. HEADER (ÜST MENÜ) */
+.ust-menu {
+    background-color: #fff; /* Temiz Beyaz */
+    padding: 15px 0;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+    border-bottom: 3px solid var(--ana-renk); /* Altına ince lacivert çizgi */
+}
+
+.ust-menu .container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem; font-weight: 800; color: var(--ana-renk);
+    letter-spacing: -0.5px;
+}
+.logo span { color: var(--vurgu-renk); font-style: italic; }
+
+#mainNav a {
+    margin-left: 25px;
+    font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+    color: var(--ana-renk); letter-spacing: 0.5px;
+}
+#mainNav a:hover { color: var(--vurgu-renk); }
+
+.menu-toggle { display: none; font-size: 1.5rem; color: var(--ana-renk); cursor: pointer; }
+
+/* 3. HERO (GİRİŞ ALANI) */
+.hero-metin { margin-bottom: 50px; border-left: 5px solid var(--vurgu-renk); padding-left: 30px; }
+
+.hero-metin h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem; color: var(--baslik-renk);
+    line-height: 1.1; margin-bottom: 15px;
+}
+
+.giris-paragrafi {
+    font-size: 1.25rem; color: #64748b; font-weight: 300; max-width: 700px;
+}
+
+/* 4. KARTLAR (Mükemmel Görüntü) */
+.makale-listesi { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.makale-karti {
+    background: var(--kart-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--golge);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.makale-karti:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--golge-hover);
+    border-top: 4px solid var(--vurgu-renk); /* Hoverda pembe çizgi */
+}
+
+.kategori {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    color: var(--vurgu-renk); margin-bottom: 10px; letter-spacing: 1px;
+}
+
+.makale-karti h3 {
+    font-family: var(--font-serif); font-size: 1.6rem;
+    color: var(--baslik-renk); margin-bottom: 15px; line-height: 1.3;
+}
+
+.makale-karti p { color: #64748b; font-size: 0.95rem; margin-bottom: 25px; }
+
+.devam-linki {
+    font-weight: 700; font-size: 0.9rem; color: var(--ana-renk);
+}
+.devam-linki:hover { color: var(--vurgu-renk); letter-spacing: 0.5px; }
+
+/* 5. DİĞER SAYFALAR İÇİN ORTAK ELEMENTLER */
+/* İletişim, Sponsor, Arşiv gibi kartların stilini makale kartıyla eşitledik */
+.sponsor-paket, .sayi-karti, .misyon, .vizyon, .iletisim-formu, .tam-makale {
+    background: var(--kart-bg); padding: 40px;
+    border-radius: 12px; box-shadow: var(--golge);
+    margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.03);
+}
+
+.sponsor-paket { border-left: 5px solid var(--vurgu-renk); text-align: center; }
+.sponsor-paket h2 { color: var(--ana-renk); font-family: var(--font-serif); margin-bottom: 20px; }
+.sponsor-paket ul { list-style: none; padding: 0; text-align: left; margin-bottom: 25px; }
+.sponsor-paket li { padding: 10px 0; border-bottom: 1px dashed #e2e8f0; color: #64748b; }
+
+.paket-butonu, .gonder-butonu, .indir-butonu {
+    display: block; width: 100%; padding: 15px;
+    background: var(--ana-renk); color: #fff;
+    border: none; border-radius: 6px; font-weight: 700; cursor: pointer;
+    text-align: center;
+}
+.paket-butonu:hover, .gonder-butonu:hover, .indir-butonu:hover { background: var(--vurgu-renk); }
+
+/* Arşiv (Dergi) Görseli */
+.sayi-karti { display: flex; align-items: center; }
+.kapak-gorseli {
+    width: 140px; height: 200px; background: #cbd5e1;
+    margin-right: 30px; border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; color: #fff;
+}
+
+/* İletişim Formu */
+.iletisim-formu input, .iletisim-formu textarea {
+    width: 100%; padding: 15px; margin-bottom: 20px;
+    border: 1px solid #cbd5e1; border-radius: 6px; font-family: var(--font-sans);
+}
+
+/* 6. FOOTER */
+footer {
+    background: var(--ana-renk); color: rgba(255,255,255,0.7);
+    text-align: center; padding: 40px 0; margin-top: 60px; font-size: 0.9rem;
+}
+
+/* 7. MOBİL */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    #mainNav {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: #fff; padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    #mainNav.active { display: flex; }
+    #mainNav a { margin: 0; padding: 15px 25px; border-bottom: 1px solid #f1f5f9; }
+    
+    .hero-metin h1 { font-size: 2.5rem; }
+    .sayi-karti { flex-direction: column; text-align: center; }
+    .kapak-gorseli { margin: 0 auto 20px; }
+    .paketler-alani { flex-direction: column; }
+    .misyon-vizyon { flex-direction: column; }
+}
+/* ========================================================== */
+/* MAKALE OKUMA SAYFASI ÖZEL TASARIMI                         */
+/* ========================================================== */
+
+/* 1. Makale Kutusu (Daraltılmış ve Odaklanmış) */
+.tam-makale {
+    max-width: 800px;         /* Çok geniş olursa göz yorulur */
+    margin: 40px auto;        /* Ortala */
+    background-color: #ffffff;
+    padding: 60px 50px;       /* İçeriden ferah boşluk */
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06); /* Derinlik */
+}
+
+/* 2. Başlık Alanı */
+.makale-ust-bilgi {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.kategori-etiketi {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--vurgu-renk); /* Pembe */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.makale-baslik {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--ana-renk); /* Lacivert */
+    margin-bottom: 20px;
+}
+
+.makale-ayirici {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 30px auto;
+    width: 60%;
+}
+
+/* 3. Metin Tipografisi (En Önemli Kısım) */
+.makale-metni p {
+    font-family: 'Manrope', sans-serif; /* Okunaklı modern font */
+    font-size: 1.15rem;       /* 18-19px idealdir */
+    line-height: 1.9;         /* Satır arası açık olsun */
+    color: #334155;           /* Tam siyah değil, koyu gri */
+    margin-bottom: 25px;      /* Paragraflar arası boşluk */
+}
+
+/* 4. Ara Başlıklar (h2) */
+.makale-metni h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--ana-renk);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* 5. Vurgulu Alıntı (Blockquote) */
+.makale-metni blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    border-top: 2px solid var(--vurgu-renk);
+    border-bottom: 2px solid var(--vurgu-renk);
+    background-color: #fcfcfc;
+}
+
+/* 6. Drop Cap (İlk Harfi Büyütme - Dergi Efekti) */
+.makale-metni .giris::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    color: var(--vurgu-renk);
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+/* 7. Mobil Uyum */
+@media (max-width: 768px) {
+    .tam-makale { padding: 30px 20px; }
+    .makale-baslik { font-size: 1.8rem; }
+    .makale-metni p { font-size: 1rem; }
+    .makale-metni .giris::first-letter { font-size: 3.5rem; }
+}

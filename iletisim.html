@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhoCaries - İletişim</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="ust-menu">
+        <div class="container">
+            <a href="index.html" class="logo">WHO<span>?</span>CARIES</a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                &#9776;
+            </div>
+            
+            <nav id="mainNav">
+                <a href="online-yazilar.html">Online Yazılar</a>
+                <a href="dergi.html">Dergi Sayıları</a>
+                <a href="sponsor.html">Sponsorluk</a>
+                <a href="hakkimizda.html">Hakkımızda</a> 
+                <a href="iletisim.html">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="ana-icerik container">
+        <h1>Bize Ulaşın</h1>
+        <p>Görüşleriniz, önerileriniz veya iş birliği talepleriniz için aşağıdaki formu doldurabilirsiniz.</p>
+        
+        <section class="iletisim-alani">
+            
+            <form action="#" method="POST" class="iletisim-formu">
+                
+                <div class="form-grup">
+                    <label for="adSoyad">Adınız Soyadınız:</label>
+                    <input type="text" id="adSoyad" name="adSoyad" required>
+                </div>
+                
+                <div class="form-grup">
+                    <label for="eposta">E-posta Adresiniz:</label>
+                    <input type="email" id="eposta" name="eposta" required>
+                </div>
+
+                <div class="form-grup">
+                    <label for="konu">Konu:</label>
+                    <input type="text" id="konu" name="konu">
+                </div>
+                
+                <div class="form-grup">
+                    <label for="mesaj">Mesajınız:</label>
+                    <textarea id="mesaj" name="mesaj" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="gonder-butonu">Mesajı Gönder</button>
+            </form>
+            
+            <div class="iletisim-bilgileri">
+                <h2>Doğrudan İletişim</h2>
+                <p><strong>E-posta:</strong> biruni.budsa@gmail.com</p>
+                <p><strong>Adres:</strong> Örnek Mah. Yeni Cad. No: 123, İstanbul</p>
+                <p><strong>Telefon:</strong> +90 5XX XXX XX XX</p>
+            </div>
+            
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 WhoCaries Dergisi. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
